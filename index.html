@@ -10,93 +10,190 @@
 <meta property="og:description" content="Transformamos o seu Instagram numa marca que vende todos os dias no WhatsApp. Entrega em 24h.">
 <!-- Para o logo aparecer ao partilhar: envie logo.png (1200x630) para o repositório e troque pelo link completo, ex: https://SEUUSER.github.io/SEUREPO/logo.png -->
 <meta property="og:image" content="logo.png">
-<meta name="theme-color" content="#2D5BFF">
+<meta name="theme-color" content="#eaf0ff">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='200 0 1130 1600'%3E%3Cpath fill='%232D5BFF' d='M1227 2L910 483H1119L841 697L930 571L823 622L741 747H1315L371 1600L623 1201H413L688 992L603 1115L709 1065L793 935H218Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#2D5BFF;--ink:#0a0a0a;--soft:#f4f6ff;--line:#e6e9f5}
+:root{--blue:#2D5BFF;--ink:#0a0a0a;--soft:#f4f6ff;--line:rgba(255,255,255,.6)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font-family:'Inter',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
+html{scroll-behavior:smooth;scroll-padding-top:96px;background:#eef2ff}
+body{font-family:'Inter',Arial,sans-serif;color:var(--ink);background:transparent;line-height:1.5;position:relative}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .logo-ico{display:block;fill:var(--blue)}
-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 6%}
+
+/* ===== FUNDO COLORIDO (o vidro precisa de cor por trás para brilhar) ===== */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(160deg,#eaf0ff 0%,#f4eeff 50%,#e6f6ff 100%)}
+.bg i{position:absolute;border-radius:50%;will-change:transform}
+.bg i:nth-child(1){width:640px;height:640px;left:-180px;top:-160px;background:radial-gradient(circle,rgba(45,91,255,.55),transparent 68%);animation:drift1 22s ease-in-out infinite}
+.bg i:nth-child(2){width:560px;height:560px;right:-160px;top:18vh;background:radial-gradient(circle,rgba(70,200,255,.55),transparent 68%);animation:drift2 26s ease-in-out infinite}
+.bg i:nth-child(3){width:640px;height:640px;left:22%;bottom:-240px;background:radial-gradient(circle,rgba(150,120,255,.5),transparent 68%);animation:drift3 30s ease-in-out infinite}
+.bg i:nth-child(4){width:380px;height:380px;right:18%;bottom:8vh;background:radial-gradient(circle,rgba(255,140,200,.4),transparent 68%);animation:drift1 34s ease-in-out infinite reverse}
+@keyframes drift1{50%{transform:translate(90px,70px) scale(1.12)}}
+@keyframes drift2{50%{transform:translate(-110px,60px) scale(.92)}}
+@keyframes drift3{50%{transform:translate(70px,-90px) scale(1.1)}}
+
+/* ===== BASE DO VIDRO LÍQUIDO ===== */
+header::before,.badge,.card,.step,.price,.quote,.faq details,input,select,textarea,.btn,.menu,.orb,nav.open{
+background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.14) 55%,rgba(255,255,255,.34));
+-webkit-backdrop-filter:blur(22px) saturate(190%);backdrop-filter:blur(22px) saturate(190%);
+border:1px solid rgba(255,255,255,.7);
+box-shadow:
+inset 0 1.5px 1px rgba(255,255,255,.95),
+inset 2px 3px 7px rgba(255,255,255,.55),
+inset -2px -3px 9px rgba(110,150,255,.22),
+0 12px 32px rgba(40,70,170,.14),
+0 2px 6px rgba(40,70,170,.08)}
+
+/* ===== HEADER FLUTUANTE (pílula) ===== */
+header{position:fixed;top:12px;left:0;right:0;z-index:100;width:min(1100px,calc(100% - 24px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:9px 10px 9px 22px}
+header::before{content:"";position:absolute;inset:0;border-radius:100px;z-index:-1}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:900;font-size:22px;letter-spacing:-.5px}
-.logo .logo-ico{width:26px;height:36px}
-nav{display:flex;align-items:center;gap:24px}
-nav a:not(.btn){color:#333;text-decoration:none;font-weight:600;font-size:14px}
-nav a:not(.btn):hover{color:var(--blue)}
-.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:800;padding:13px 24px;border-radius:100px;border:0;font-size:15px;cursor:pointer;transition:transform .2s,box-shadow .2s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,91,255,.35)}
-.btn.ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
-.menu{display:none;background:none;border:0;font-size:28px;cursor:pointer;color:var(--ink)}
-.hero{padding:150px 6% 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;background:linear-gradient(180deg,var(--soft),#fff)}
-.badge{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--blue);font-weight:800;font-size:13px;padding:7px 14px;border-radius:100px;margin-bottom:20px}
+.logo .logo-ico{width:24px;height:34px}
+nav{display:flex;align-items:center;gap:4px}
+nav a:not(.btn){color:#1c2340;text-decoration:none;font-weight:600;font-size:14px;padding:9px 15px;border-radius:100px;transition:background .25s,box-shadow .25s,color .25s}
+nav a:not(.btn):hover{color:var(--blue);background:rgba(255,255,255,.6);box-shadow:inset 0 1px 1px #fff,0 4px 14px rgba(45,91,255,.14)}
+
+/* ===== BOTÕES (gota de água) ===== */
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-block;color:#fff;text-decoration:none;font-weight:800;padding:14px 26px;border-radius:100px;font-size:15px;cursor:pointer;text-shadow:0 1px 2px rgba(10,30,120,.35);
+background:linear-gradient(180deg,rgba(110,148,255,.92),rgba(45,91,255,.88) 55%,rgba(30,70,230,.92));
+border:1px solid rgba(255,255,255,.65);
+box-shadow:inset 0 2px 2px rgba(255,255,255,.85),inset 0 -10px 16px rgba(10,40,200,.38),inset 2px 0 6px rgba(255,255,255,.25),inset -2px 0 6px rgba(255,255,255,.18),0 10px 26px rgba(45,91,255,.38),0 2px 6px rgba(45,91,255,.25);
+transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,border-radius .3s}
+.btn::before{content:"";position:absolute;left:7%;right:7%;top:3px;height:48%;border-radius:100px 100px 60% 60%/100px 100px 40% 40%;background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,.04));z-index:-1;pointer-events:none}
+.btn::after{content:"";position:absolute;inset:0;background:radial-gradient(130px circle at var(--mx,50%) var(--my,0),rgba(255,255,255,.65),transparent 65%);opacity:0;transition:opacity .3s;z-index:-1;pointer-events:none}
+.btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:inset 0 2px 2px rgba(255,255,255,.95),inset 0 -10px 16px rgba(10,40,200,.38),0 16px 34px rgba(45,91,255,.45),0 2px 6px rgba(45,91,255,.25)}
+.btn:hover::after{opacity:1}
+.btn:active{transform:scale(.94,.9);border-radius:60px/50px}
+.btn.ghost{color:var(--blue);text-shadow:none;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.18) 55%,rgba(255,255,255,.4));
+box-shadow:inset 0 2px 1px rgba(255,255,255,.95),inset 2px 3px 7px rgba(255,255,255,.55),inset -2px -3px 9px rgba(110,150,255,.25),0 8px 22px rgba(40,70,170,.14)}
+.btn.ghost::before{background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,0))}
+.btn.ghost::after{background:radial-gradient(130px circle at var(--mx,50%) var(--my,0),rgba(45,91,255,.22),transparent 65%)}
+header .btn{padding:11px 22px}
+.menu{display:none;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;color:var(--ink);place-items:center;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.menu:active{transform:scale(.88)}
+
+/* ===== HERO ===== */
+.hero{padding:160px 6% 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;background:none}
+.badge{display:inline-block;color:var(--blue);font-weight:800;font-size:13px;padding:8px 16px;border-radius:100px;margin-bottom:20px}
 .hero h1{font-size:clamp(32px,4.8vw,56px);line-height:1.05;letter-spacing:-1.5px;font-weight:900;max-width:16em}
-.hero p{color:#555;font-size:18px;max-width:34em;margin:20px 0 28px}
-.hero small{display:block;margin-top:16px;color:#777;font-size:13px}
+.hero p{color:#46506e;font-size:18px;max-width:34em;margin:20px 0 28px}
+.hero small{display:block;margin-top:16px;color:#5b6483;font-size:13px}
 .hero-logo{display:grid;place-items:center}
-.hero-logo svg{width:min(300px,60vw);height:auto;filter:drop-shadow(0 24px 40px rgba(45,91,255,.28));animation:float 5s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-12px)}}
+.orb{position:relative;width:min(340px,70vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;overflow:hidden;isolation:isolate;animation:float 6s ease-in-out infinite;
+box-shadow:inset 0 3px 3px rgba(255,255,255,.95),inset 8px 10px 30px rgba(255,255,255,.55),inset -10px -14px 34px rgba(90,130,255,.35),0 30px 60px rgba(45,91,255,.28),0 4px 12px rgba(45,91,255,.15)}
+.orb::before{content:"";position:absolute;left:14%;top:6%;width:52%;height:30%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,0));transform:rotate(-22deg);z-index:1;pointer-events:none}
+.orb::after{content:"";position:absolute;inset:0;background:radial-gradient(200px circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.4),transparent 65%);z-index:1;pointer-events:none}
+.orb svg{width:42%;height:auto;filter:drop-shadow(0 14px 18px rgba(45,91,255,.35));position:relative;z-index:0}
+@keyframes float{50%{transform:translateY(-14px)}}
+
+/* ===== SECÇÕES ===== */
 .section{padding:80px 6%}
-.section.alt{background:var(--soft)}
+.section.alt{background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.38) 20%,rgba(255,255,255,.38) 80%,rgba(255,255,255,0))}
 .section h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1px;text-align:center;font-weight:900}
-.sub{text-align:center;color:#666;margin:8px auto 40px;max-width:36em}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:0 auto}
-.card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;transition:transform .25s}
-.card:hover{transform:translateY(-4px)}
-.card img{width:100%;height:190px;object-fit:cover;display:block}
-.card div{padding:16px 18px}
-.card p{color:#666;font-size:14px}
-.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}
+.sub{text-align:center;color:#5b6483;margin:8px auto 40px;max-width:36em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;max-width:1100px;margin:0 auto}
+
+.card,.step,.price,.quote{position:relative;isolation:isolate}
+.card{border-radius:28px;overflow:hidden;padding:8px;transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.card:hover{transform:translateY(-6px) scale(1.015)}
+.card img{width:100%;height:190px;object-fit:cover;display:block;border-radius:21px}
+.card div{padding:14px 12px 8px}
+.card p{color:#56607e;font-size:14px}
+.card::after,.step::after,.price::after,.quote::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(220px circle at var(--mx,50%) var(--my,0),rgba(255,255,255,.55),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
+.card:hover::after,.step:hover::after,.price:hover::after,.quote:hover::after{opacity:1}
+.card::before{content:"";position:absolute;left:0;top:0;width:100%;height:46%;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0));pointer-events:none;z-index:2}
+
+.step{border-radius:28px;padding:30px;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.step:hover{transform:translateY(-4px)}
 .step b{display:block;font-size:42px;color:var(--blue);font-weight:900}
 .step h3{margin:6px 0}
-.step p{color:#555}
-.price{background:#fff;border:2px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column}
-.price.pop{border-color:var(--blue);box-shadow:0 20px 50px rgba(45,91,255,.18)}
-.price .tag{align-self:flex-start;background:var(--blue);color:#fff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:100px;margin-bottom:10px}
+.step p{color:#46506e}
+
+.price{border-radius:32px;padding:32px;display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.price:hover{transform:translateY(-5px)}
+.price.pop{background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(120,150,255,.22) 55%,rgba(255,255,255,.4));border-color:rgba(255,255,255,.9);box-shadow:inset 0 2px 1px #fff,inset 2px 3px 8px rgba(255,255,255,.6),inset -3px -4px 14px rgba(45,91,255,.28),0 24px 56px rgba(45,91,255,.3)}
+.price .tag{align-self:flex-start;color:#fff;font-size:12px;font-weight:800;padding:5px 14px;border-radius:100px;margin-bottom:10px;background:linear-gradient(180deg,rgba(110,148,255,.95),rgba(45,91,255,.9));border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1.5px 1px rgba(255,255,255,.8),0 6px 14px rgba(45,91,255,.35);text-shadow:0 1px 2px rgba(10,30,120,.3)}
 .price .val{font-size:38px;font-weight:900;margin:10px 0}
-.price .val small{font-size:15px;color:#777;font-weight:600}
-.price ul{list-style:none;margin:10px 0 24px;color:#444;line-height:2;flex:1}
+.price .val small{font-size:15px;color:#5b6483;font-weight:600}
+.price ul{list-style:none;margin:10px 0 24px;color:#2f3858;line-height:2;flex:1}
 .price li::before{content:"✓ ";color:var(--blue);font-weight:900}
 .price .btn{text-align:center}
-.quote{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}
+
+.quote{border-radius:28px;padding:28px;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.quote:hover{transform:translateY(-4px)}
 .quote p{font-size:16px;margin-bottom:14px}
-.quote span{color:#666;font-size:14px;font-weight:600}
+.quote span{color:#56607e;font-size:14px;font-weight:600}
+
 .faq{max-width:720px;margin:0 auto}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:10px}
+.faq details{border-radius:24px;padding:18px 22px;margin-bottom:12px;transition:background .3s}
+.faq details[open]{background:linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,255,255,.3))}
 .faq summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:12px}
-.faq summary::after{content:"+";color:var(--blue);font-size:22px;line-height:1;transition:transform .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--blue);font-size:22px;line-height:1;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{color:#555;margin-top:10px}
-form{max-width:560px;margin:0 auto;display:grid;gap:12px}
-input,select,textarea{width:100%;padding:14px 16px;border:1px solid #d6dbee;border-radius:14px;font:inherit;background:#fff}
+.faq details p{color:#46506e;margin-top:10px}
+
+form{max-width:560px;margin:0 auto;display:grid;gap:14px}
+input,select,textarea{width:100%;padding:15px 20px;border-radius:22px;font:inherit;color:var(--ink);transition:box-shadow .3s,background .3s;
+box-shadow:inset 0 2px 5px rgba(40,70,170,.1),inset 0 -1px 1px rgba(255,255,255,.9),0 6px 18px rgba(40,70,170,.08)}
+input::placeholder,textarea::placeholder{color:#7a84a3}
+input:focus,select:focus,textarea:focus{outline:none;background:rgba(255,255,255,.75);box-shadow:inset 0 2px 5px rgba(40,70,170,.08),0 0 0 3px rgba(45,91,255,.35),0 10px 26px rgba(45,91,255,.18)}
 textarea{min-height:100px;resize:vertical}
-footer{background:var(--ink);color:#aaa;padding:60px 6% 30px}
+form .btn{padding:16px 26px;font-size:16px}
+
+/* ===== RODAPÉ ===== */
+footer{position:relative;overflow:hidden;isolation:isolate;margin:40px 12px 12px;border-radius:36px;color:#b8c0dd;padding:60px 6% 30px;background:linear-gradient(145deg,rgba(8,14,44,.94),rgba(18,34,96,.9));border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 2px 2px rgba(255,255,255,.35),inset 0 -20px 50px rgba(45,91,255,.18),0 20px 50px rgba(20,40,120,.3)}
+footer::before{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-240px;border-radius:50%;background:radial-gradient(circle,rgba(45,91,255,.55),transparent 68%);z-index:-1}
+footer::after{content:"";position:absolute;left:0;right:0;top:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,0));pointer-events:none;z-index:-1}
 .foot{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto 30px}
 .foot .logo{color:#fff;font-size:34px;gap:16px}
-.foot .logo .logo-ico{width:52px;height:74px}
+.foot .logo .logo-ico{width:52px;height:74px;fill:#6f93ff}
 .foot a{color:#fff;text-decoration:none;font-weight:600}
 .foot nav{flex-wrap:wrap;gap:18px}
-.copy{text-align:center;font-size:13px;border-top:1px solid #222;padding-top:22px}
-.whats{position:fixed;right:20px;bottom:20px;z-index:200;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .2s}
-.whats:hover{transform:scale(1.08)}
-.whats svg{width:34px;height:34px;fill:#fff}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.foot nav a:not(.btn){color:#fff;padding:6px 10px}
+.foot nav a:not(.btn):hover{color:#9db6ff;background:rgba(255,255,255,.12);box-shadow:none}
+.copy{text-align:center;font-size:13px;border-top:1px solid rgba(255,255,255,.14);padding-top:22px}
+
+/* ===== WHATSAPP FLUTUANTE ===== */
+.whats{position:fixed;right:20px;bottom:20px;z-index:200;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;overflow:hidden;isolation:isolate;
+background:linear-gradient(180deg,rgba(90,235,140,.9),rgba(30,185,90,.9));
+-webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);
+border:1px solid rgba(255,255,255,.7);
+box-shadow:inset 0 2px 2px rgba(255,255,255,.9),inset 0 -10px 16px rgba(0,120,50,.35),0 12px 30px rgba(20,150,70,.4);
+transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.whats::before{content:"";position:absolute;left:12%;right:12%;top:3px;height:46%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,0));z-index:-1}
+.whats:hover{transform:scale(1.1)}
+.whats:active{transform:scale(.92,.88)}
+.whats svg{width:34px;height:34px;fill:#fff;filter:drop-shadow(0 1px 2px rgba(0,90,40,.4))}
+
+.reveal{opacity:0;transform:translateY(24px) scale(.98);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
 .reveal.in{opacity:1;transform:none}
+.card.reveal.in,.step.reveal.in,.price.reveal.in,.quote.reveal.in{transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+
 @media(max-width:860px){
-.hero{grid-template-columns:1fr;text-align:center;padding-top:120px}
+.hero{grid-template-columns:1fr;text-align:center;padding-top:130px}
 .hero h1,.hero p{margin-left:auto;margin-right:auto}
-.hero-logo{order:-1}.hero-logo svg{width:130px}
-.menu{display:block}
-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px 6% 26px;border-bottom:1px solid var(--line);gap:18px}
-nav.open{display:flex}
+.hero-logo{order:-1}.orb{width:170px}
+.menu{display:grid}
+header{padding:8px 8px 8px 18px}
+nav{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;flex-direction:column;align-items:stretch;padding:16px;border-radius:30px;gap:4px;text-align:center}
+nav.open{display:flex;background:linear-gradient(135deg,rgba(255,255,255,.85),rgba(255,255,255,.6))}
+nav a:not(.btn){padding:12px}
+nav .btn{margin-top:6px;text-align:center}
+.bg i:nth-child(1),.bg i:nth-child(3){width:420px;height:420px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-logo svg{animation:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.orb,.bg i{animation:none}}
+/* Fallback: navegadores sem backdrop-filter ficam mais opacos para manter legibilidade */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+header::before,.badge,.card,.step,.price,.quote,.faq details,input,select,textarea,.menu,.orb,nav.open{background:rgba(255,255,255,.88)}
+.btn.ghost{background:rgba(255,255,255,.92)}
+}
 </style>
 </head>
 <body>
+
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
 <!-- LOGO SharpTech: raio azul em S duplo (único símbolo, reutilizado em todo o site) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -126,7 +223,7 @@ nav.open{display:flex}
 <small>✓ Domínio grátis &nbsp; ✓ Botão WhatsApp &nbsp; ✓ Entrega em 
 48h</small>
 </div>
-<div class="hero-logo"><svg viewBox="200 0 1130 1600" class="logo-ico" role="img" aria-label="Logo SharpTech"><use href="#raio"/></svg></div>
+<div class="hero-logo"><div class="orb"><svg viewBox="200 0 1130 1600" class="logo-ico" role="img" aria-label="Logo SharpTech"><use href="#raio"/></svg></div></div>
 </section>
 
 <section class="section" id="portfolio">
@@ -134,7 +231,7 @@ nav.open{display:flex}
 <p class="sub reveal">Lojas que já vendem mais com a gente</p>
 <div class="grid">
 <div class="card reveal"><img loading="lazy" alt="Mynali Store" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500"><div><b>Mynali Store</b><p>Moda feminina - Luanda</p></div></div>
-<div class="card reveal"><img loading="lazy" alt="Bella Beauty" src="https://images.unsplash.com/photo-1522333787356-336fbeab5731?w=500"><div><b>Bella Beauty</b><p>Salão - Talatona</p></div></div>
+<div class="card reveal"><img loading="lazy" alt="Bella Beauty" src=""><div><b>Bella Beauty</b><p>Salão - Talatona</p></div></div>
 <div class="card reveal"><img loading="lazy" alt="Zara AO" src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=500"><div><b>Zara AO</b><p>Loja de roupas</p></div></div>
 <div class="card reveal"><img loading="lazy" alt="Tech Center" src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=500"><div><b>Tech Center</b><p>Eletrónicos</p></div></div>
 <div class="card reveal"><img loading="lazy" alt="Luxo Hair" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500"><div><b>Luxo Hair</b><p>Cabelos</p></div></div>
@@ -206,6 +303,96 @@ nav.open{display:flex}
 </nav>
 </div>
 <p class="copy">© 2026 SharpTech | SharpTech . Feito em Luanda.</p>
+</footer>
+
+<a class="whats" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20meu%20site" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.600 3.300 15.600c0 2.300.6 4.400 1.700 6.300L3 29l7.300-1.900c1.800 1 3.800 1.500 5.700 1.500 7 0 12.700-5.700 12.700-12.700S23 3 16 3zm0 23.200c-1.800 0-3.600-.5-5.100-1.400l-.4-.2-4.300 1.100 1.200-4.200-.3-.4c-1.100-1.600-1.700-3.500-1.700-5.500C5.400 9.800 10.200 5.300 16 5.300s10.600 4.700 10.600 10.400S21.800 26.200 16 26.200zm5.800-7.900c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200s-.8 1-1 1.200c-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.300-.2-.3 0-.5.200-.7l.5-.6c.2-.2.200-.3.300-.5.100-.2.100-.4 0-.6l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.200-1.200 2.800s1.200 3.300 1.400 3.500c.2.200 2.400 3.700 5.900 5.100 2.200.9 3 .9 4.100.8.700-.1 1.900-.8 2.200-1.500.3-.7.300-1.400.2-1.500 0-.2-.3-.3-.6-.4z"/></svg></a>
+
+<script>
+const nav=document.getElementById('nav'),menu=document.getElementById('menu');
+menu.addEventListener('click',()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+nav.addEventListener('click',e=>{if(e.target.tagName==='A')nav.classList.remove('open')});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.btn,.card,.price,.step,.quote,.orb').forEach(el=>el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+document.getElementById('form').addEventListener('submit',e=>{
+e.preventDefault();
+const v=id=>document.getElementById(id).value.trim();
+const t=`Olá SharpTech! Sou ${v('nome')}, da loja ${v('loja')}. Quero o plano ${v('plano')}.`+(v('msg')?` ${v('msg')}`:'');
+window.open('https://wa.me/244958197124?text='+encodeURIComponent(t),'_blank');
+});
+</script>
+</body>
+</html>
+ech Center</b><p>Eletrónicos</p></div></div>
+<div class="card reveal"><img loading="lazy" alt="Luxo Hair" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500"><div><b>Luxo Hair</b><p>Cabelos</p></div></div>
+<div class="card reveal"><img loading="lazy" alt="Food Express" src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500"><div><b>Food Express</b><p>Restaurante</p></div></div>
+</div>
+</section>
+
+<section class="section alt" id="como">
+<h2 class="reveal">Como funciona</h2>
+<p class="sub reveal">Três passos e o seu site está no ar</p>
+<div class="grid">
+<div class="step reveal"><b>1</b><h3>Fala connosco</h3><p>Envia mensagem no WhatsApp com o nome da loja, produtos e o seu Instagram.</p></div>
+<div class="step reveal"><b>2</b><h3>Nós criamos</h3><p>Montamos o site com o seu logo, cores e botão de pedido directo no WhatsApp.</p></div>
+<div class="step reveal"><b>3</b><h3>Online em 24h</h3><p>Entregamos o link com domínio. A partir daí, os clientes pedem-lhe no WhatsApp.</p></div>
+</div>
+</section>
+
+<section class="section" id="precos">
+<h2 class="reveal">Preços</h2>
+<p class="sub reveal">Pagamento único, sem surpresas</p>
+<div class="grid">
+<div class="price reveal"><h3>Start</h3><div class="val">60.000 Kz</div><ul><li>Site de 1 página</li><li>Botão WhatsApp</li><li>Domínio grátis</li><li>Entrega em 48h</li></ul><a class="btn ghost" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20plano%20Start%20(25k)">Escolher Start</a></div>
+<div class="price pop reveal"><span class="tag">Mais escolhido</span><h3>Pro</h3><div class="val">75.000 Kz</div><ul><li>Até 5 secções</li><li>Catálogo de produtos</li><li>Integração com Instagram</li><li>SEO básico</li></ul><a class="btn" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20plano%20Pro%20(45k)">Escolher Pro</a></div>
+<div class="price reveal"><h3>Premium</h3><div class="val">95.000 Kz</div><ul><li>Site completo personalizado</li><li>Várias páginas</li><li>Design exclusivo</li><li>Suporte prioritário</li></ul><a class="btn ghost" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20plano%20Premium%20(80k)">Escolher Premium</a></div>
+</div>
+</section>
+
+<section class="section alt" id="depoimentos">
+<h2 class="reveal">O que dizem os clientes</h2>
+<p class="sub reveal">Lojas de Luanda que já vendem pelo site</p>
+<div class="grid">
+<div class="quote reveal"><p>“Antes eu só vendia pelo Instagram. Agora os clientes chegam no WhatsApp já com o pedido pronto.”</p><span>Cliente - Moda feminina, Luanda</span></div>
+<div class="quote reveal"><p>“Ficou pronto no dia seguinte e o salão ganhou mais marcações logo na primeira semana.”</p><span>Cliente - Salão, Talatona</span></div>
+<div class="quote reveal"><p>“Site simples, bonito e profissional. Recomendo a quem quer ser mais conhecido.”</p><span>Cliente - Restaurante, Luanda</span></div>
+</div>
+</section>
+
+<section class="section" id="faq">
+<h2 class="reveal">Perguntas frequentes</h2>
+<p class="sub reveal">Tire as suas dúvidas</p>
+<div class="faq reveal">
+<details><summary>Em quanto tempo recebo o site?</summary><p>Em até 48 horas depois de nos enviar o logo e as informações da loja.</p></details>
+<details><summary>Preciso de ter domínio?</summary><p>Não. O domínio está incluído nos planos.</p></details>
+<details><summary>Como os clientes me contactam?</summary><p>Através de botões de WhatsApp espalhados pelo site, com mensagem já preenchida.</p></details>
+<details><summary>Como posso pagar?</summary><p>Combinamos o pagamento no WhatsApp. Fale connosco para ver as opções.</p></details>
+<details><summary>Posso pedir alterações depois?</summary><p>Sim. Fale connosco no WhatsApp e ajustamos o que precisar.</p></details>
+</div>
+</section>
+
+<section class="section alt" id="contacto">
+<h2 class="reveal">Contacto</h2>
+<p class="sub reveal">Preencha e abrimos a conversa no WhatsApp</p>
+<form id="form" class="reveal">
+<input id="nome" placeholder="O seu nome" required autocomplete="name">
+<input id="loja" placeholder="Nome da loja ou negócio" required>
+<select id="plano"><option>Start (60.000 Kz)</option><option selected>Pro (75.000 Kz)</option><option>Premium (95.000 Kz)</option></select>
+<textarea id="msg" placeholder="Conte-nos o que vende (opcional)"></textarea>
+<button class="btn" type="submit">Enviar pelo WhatsApp</button>
+</form>
+</section>
+</main>
+
+<footer>
+<div class="foot">
+<a class="logo" href="#inicio" aria-label="SharpTech"><svg class="logo-ico" aria-hidden="true"><use href="#raio"/></svg>SharpTech</a>
+<nav>
+<a href="#portfolio">Portfólio</a><a href="#como">Como funciona</a><a href="#precos">Preços</a><a href="#contacto">Contacto</a>
+<a href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech">WhatsApp +244 958 197 124</a>
+</nav>
+</div>
+<p class="copy">© 2026 SharpTech | SharpTech . O futuro do seu negócio é online.</p>
 </footer>
 
 <a class="whats" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20meu%20site" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.600 3.300 15.600c0 2.300.6 4.400 1.700 6.300L3 29l7.300-1.900c1.800 1 3.800 1.500 5.700 1.500 7 0 12.700-5.700 12.700-12.700S23 3 16 3zm0 23.200c-1.800 0-3.600-.5-5.100-1.400l-.4-.2-4.300 1.100 1.200-4.200-.3-.4c-1.100-1.600-1.700-3.500-1.700-5.500C5.400 9.800 10.200 5.300 16 5.300s10.600 4.700 10.600 10.400S21.800 26.200 16 26.200zm5.800-7.900c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200s-.8 1-1 1.200c-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.300-.2-.3 0-.5.200-.7l.5-.6c.2-.2.200-.3.300-.5.100-.2.100-.4 0-.6l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.200-1.200 2.800s1.200 3.300 1.400 3.500c.2.200 2.400 3.700 5.900 5.100 2.200.9 3 .9 4.100.8.700-.1 1.900-.8 2.200-1.500.3-.7.300-1.400.2-1.500 0-.2-.3-.3-.6-.4z"/></svg></a>
