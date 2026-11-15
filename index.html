@@ -219,7 +219,7 @@ header::before,.badge,.card,.step,.price,.quote,.faq details,input,select,textar
 <div class="badge">⚡ SharpTech - Já +50 lojas em Luanda</div>
 <h1>Um site é a oportunidade de render mais e ser mais conhecida a nível profissional</h1>
 <p>Transformamos a sua loja do Instagram numa marca que vende todos os dias no WhatsApp. Entrega em 48h, feito em Luanda pela SharpTech.</p>
-<a class="btn" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20meu%20site%20por%2025.000%20Kz">Quero o meu site por 60.000 Kz</a>
+<a class="btn" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20meu%20site%20por%2025.000%20Kz">Quero o meu site por 80.000 Kz</a>
 <small>✓ Domínio grátis &nbsp; ✓ Botão WhatsApp &nbsp; ✓ Entrega em 
 48h</small>
 </div>
@@ -253,8 +253,8 @@ header::before,.badge,.card,.step,.price,.quote,.faq details,input,select,textar
 <h2 class="reveal">Preços</h2>
 <p class="sub reveal">Pagamento único, sem surpresas</p>
 <div class="grid">
-<div class="price reveal"><h3>Start</h3><div class="val">60.000 Kz</div><ul><li>Site de 1 página</li><li>Botão WhatsApp</li><li>Domínio grátis</li><li>Entrega em 48h</li></ul><a class="btn ghost" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20plano%20Start%20(25k)">Escolher Start</a></div>
-<div class="price pop reveal"><span class="tag">Mais escolhido</span><h3>Pro</h3><div class="val">75.000 Kz</div><ul><li>Até 5 secções</li><li>Catálogo de produtos</li><li>Integração com Instagram</li><li>SEO básico</li></ul><a class="btn" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20plano%20Pro%20(45k)">Escolher Pro</a></div>
+<div class="price reveal"><h3>Start</h3><div class="val">80.000 Kz</div><ul><li>Site de 1 página</li><li>Botão WhatsApp</li><li>Domínio grátis</li><li>Entrega em 48h</li></ul><a class="btn ghost" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20plano%20Start%20(25k)">Escolher Start</a></div>
+<div class="price pop reveal"><span class="tag">Mais escolhido</span><h3>Pro</h3><div class="val">9.000 Kz</div><ul><li>Até 5 secções</li><li>Catálogo de produtos</li><li>Integração com Instagram</li><li>SEO básico</li></ul><a class="btn" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20plano%20Pro%20(45k)">Escolher Pro</a></div>
 <div class="price reveal"><h3>Premium</h3><div class="val">95.000 Kz</div><ul><li>Site completo personalizado</li><li>Várias páginas</li><li>Design exclusivo</li><li>Suporte prioritário</li></ul><a class="btn ghost" href="https://wa.me/244958197124?text=Ol%C3%A1%20SharpTech,%20quero%20o%20plano%20Premium%20(80k)">Escolher Premium</a></div>
 </div>
 </section>
@@ -287,7 +287,7 @@ header::before,.badge,.card,.step,.price,.quote,.faq details,input,select,textar
 <form id="form" class="reveal">
 <input id="nome" placeholder="O seu nome" required autocomplete="name">
 <input id="loja" placeholder="Nome da loja ou negócio" required>
-<select id="plano"><option>Start (60.000 Kz)</option><option selected>Pro (75.000 Kz)</option><option>Premium (95.000 Kz)</option></select>
+<select id="plano"><option>Start (6.000 Kz)</option><option selected>Pro (75.000 Kz)</option><option>Premium (95.000 Kz)</option></select>
 <textarea id="msg" placeholder="Conte-nos o que vende (opcional)"></textarea>
 <button class="btn" type="submit">Enviar pelo WhatsApp</button>
 </form>
@@ -402,13 +402,120 @@ const nav=document.getElementById('nav'),menu=document.getElementById('menu');
 menu.addEventListener('click',()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
 nav.addEventListener('click',e=>{if(e.target.tagName==='A')nav.classList.remove('open')});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-document.getElementById('form').addEventListener('submit',e=>{
-e.preventDefault();
-const v=id=>document.getElementById(id).value.trim();
-const t=`Olá SharpTech! Sou ${v('nome')}, da loja ${v('loja')}. Quero o plano ${v('plano')}.`+(v('msg')?` ${v('msg')}`:'');
-window.open('https://wa.me/244958197124?text='+encodeURIComponent(t),'_blank');
-});
-</script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SharpTech | SiteJá Ao - Sites que vendem em 24h</title>
+<meta name="description" content="SharpTech cria sites que vendem no WhatsApp em 24h. Já +50 lojas em Luanda.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SharpTech | SiteJá AO - Sites que vendem em 24h">
+<meta property="og:description" content="Transformamos o seu Instagram numa marca que vende todos os dias no WhatsApp. Entrega em 24h.">
+<meta property="og:image" content="logo.png">
+<meta name="theme-color" content="#eaf0ff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='200 0 1130 1600'%3E%3Cpath fill='%232D5BFF' d='M1227 2L910 483H1119L841 697L930 571L823 622L741 747H1315L371 1600L623 1201H413L688 992L603 1115L709 1065L793 935H218Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2D5BFF;--ink:#0a0a0a;--soft:#f4f6ff;--line:rgba(255,255,255,.6)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;background:#eef2ff}
+body{font-family:'Inter',Arial,sans-serif;color:var(--ink);background:transparent;line-height:1.5;position:relative}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.logo-ico{display:block;fill:var(--blue)}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(160deg,#eaf0ff 0%,#f4eeff 50%,#e6f6ff 100%)}
+.bg i{position:absolute;border-radius:50%;will-change:transform}
+.bg i:nth-child(1){width:640px;height:640px;left:-180px;top:-160px;background:radial-gradient(circle,rgba(45,91,255,.55),transparent 68%);animation:drift1 22s ease-in-out infinite}
+.bg i:nth-child(2){width:560px;height:560px;right:-160px;top:18vh;background:radial-gradient(circle,rgba(70,200,255,.55),transparent 68%);animation:drift2 26s ease-in-out infinite}
+.bg i:nth-child(3){width:640px;height:640px;left:22%;bottom:-240px;background:radial-gradient(circle,rgba(150,120,255,.5),transparent 68%);animation:drift3 30s ease-in-out infinite}
+.bg i:nth-child(4){width:380px;height:380px;right:18%;bottom:8vh;background:radial-gradient(circle,rgba(255,140,200,.4),transparent 68%);animation:drift1 34s ease-in-out infinite reverse}
+@keyframes drift1{50%{transform:translate(90px,70px) scale(1.12)}}
+@keyframes drift2{50%{transform:translate(-110px,60px) scale(.92)}}
+@keyframes drift3{50%{transform:translate(70px,-90px) scale(1.1)}}
+header::before,.badge,.card,.step,.price,.quote,.faq details,input,select,textarea,.btn,.menu,.orb,nav.open{
+background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.14) 55%,rgba(255,255,255,.34));
+-webkit-backdrop-filter:blur(22px) saturate(190%);backdrop-filter:blur(22px) saturate(190%);
+border:1px solid rgba(255,255,255,.7);
+box-shadow:inset 0 1.5px 1px rgba(255,255,255,.95),inset 2px 3px 7px rgba(255,255,255,.55),inset -2px -3px 9px rgba(110,150,255,.22),0 12px 32px rgba(40,70,170,.14),0 2px 6px rgba(40,70,170,.08)}
+header{position:fixed;top:12px;left:0;right:0;z-index:100;width:min(1100px,calc(100% - 24px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:9px 10px 9px 22px}
+header::before{content:"";position:absolute;inset:0;border-radius:100px;z-index:-1}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:900;font-size:22px;letter-spacing:-.5px}
+.logo .logo-ico{width:24px;height:34px}
+nav{display:flex;align-items:center;gap:4px}
+nav a:not(.btn){color:#1c2340;text-decoration:none;font-weight:600;font-size:14px;padding:9px 15px;border-radius:100px;transition:background .25s,box-shadow .25s,color .25s}
+nav a:not(.btn):hover{color:var(--blue);background:rgba(255,255,255,.6);box-shadow:inset 0 1px 1px #fff,0 4px 14px rgba(45,91,255,.14)}
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-block;color:#fff;text-decoration:none;font-weight:800;padding:14px 26px;border-radius:100px;font-size:15px;cursor:pointer;text-shadow:0 1px 2px rgba(10,30,120,.35);
+background:linear-gradient(180deg,rgba(110,148,255,.92),rgba(45,91,255,.88) 55%,rgba(30,70,230,.92));
+border:1px solid rgba(255,255,255,.65);
+box-shadow:inset 0 2px 2px rgba(255,255,255,.85),inset 0 -10px 16px rgba(10,40,200,.38),inset 2px 0 6px rgba(255,255,255,.25),inset -2px 0 6px rgba(255,255,255,.18),0 10px 26px rgba(45,91,255,.38),0 2px 6px rgba(45,91,255,.25);
+transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,border-radius .3s}
+.btn::before{content:"";position:absolute;left:7%;right:7%;top:3px;height:48%;border-radius:100px 100px 60% 60%/100px 100px 40% 40%;background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,.04));z-index:-1;pointer-events:none}
+.btn::after{content:"";position:absolute;inset:0;background:radial-gradient(130px circle at var(--mx,50%) var(--my,0),rgba(255,255,255,.65),transparent 65%);opacity:0;transition:opacity .3s;z-index:-1;pointer-events:none}
+.btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:inset 0 2px 2px rgba(255,255,255,.95),inset 0 -10px 16px rgba(10,40,200,.38),0 16px 34px rgba(45,91,255,.45),0 2px 6px rgba(45,91,255,.25)}
+.btn:hover::after{opacity:1}
+.btn:active{transform:scale(.94,.9);border-radius:60px/50px}
+.btn.ghost{color:var(--blue);text-shadow:none;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.18) 55%,rgba(255,255,255,.4));
+box-shadow:inset 0 2px 1px rgba(255,255,255,.95),inset 2px 3px 7px rgba(255,255,255,.55),inset -2px -3px 9px rgba(110,150,255,.25),0 8px 22px rgba(40,70,170,.14)}
+.btn.ghost::before{background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,0))}
+.btn.ghost::after{background:radial-gradient(130px circle at var(--mx,50%) var(--my,0),rgba(45,91,255,.22),transparent 65%)}
+header .btn{padding:11px 22px}
+.menu{display:none;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;color:var(--ink);place-items:center;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.menu:active{transform:scale(.88)}
+.hero{padding:160px 6% 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;background:none}
+.badge{display:inline-block;color:var(--blue);font-weight:800;font-size:13px;padding:8px 16px;border-radius:100px;margin-bottom:20px}
+.hero h1{font-size:clamp(32px,4.8vw,56px);line-height:1.05;letter-spacing:-1.5px;font-weight:900;max-width:16em}
+.hero p{color:#46506e;font-size:18px;max-width:34em;margin:20px 0 28px}
+.hero small{display:block;margin-top:16px;color:#5b6483;font-size:13px}
+.hero-logo{display:grid;place-items:center}
+.orb{position:relative;width:min(340px,70vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;overflow:hidden;isolation:isolate;animation:float 6s ease-in-out infinite;
+box-shadow:inset 0 3px 3px rgba(255,255,255,.95),inset 8px 10px 30px rgba(255,255,255,.55),inset -10px -14px 34px rgba(90,130,255,.35),0 30px 60px rgba(45,91,255,.28),0 4px 12px rgba(45,91,255,.15)}
+.orb::before{content:"";position:absolute;left:14%;top:6%;width:52%;height:30%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,0));transform:rotate(-22deg);z-index:1;pointer-events:none}
+.orb::after{content:"";position:absolute;inset:0;background:radial-gradient(200px circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.4),transparent 65%);z-index:1;pointer-events:none}
+.orb svg{width:42%;height:auto;filter:drop-shadow(0 14px 18px rgba(45,91,255,.35));position:relative;z-index:0}
+@keyframes float{50%{transform:translateY(-14px)}}
+.section{padding:80px 6%}
+.section.alt{background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.38) 20%,rgba(255,255,255,.38) 80%,rgba(255,255,255,0))}
+.section h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1px;text-align:center;font-weight:900}
+.sub{text-align:center;color:#5b6483;margin:8px auto 40px;max-width:36em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;max-width:1100px;margin:0 auto}
+.card,.step,.price,.quote{position:relative;isolation:isolate}
+.card{border-radius:28px;overflow:hidden;padding:8px;transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.card:hover{transform:translateY(-6px) scale(1.015)}
+.card img{width:100%;height:190px;object-fit:cover;display:block;border-radius:21px}
+.card div{padding:14px 12px 8px}
+.card p{color:#56607e;font-size:14px}
+.card::after,.step::after,.price::after,.quote::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(220px circle at var(--mx,50%) var(--my,0),rgba(255,255,255,.55),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
+.card:hover::after,.step:hover::after,.price:hover::after,.quote:hover::after{opacity:1}
+.card::before{content:"";position:absolute;left:0;top:0;width:100%;height:46%;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0));pointer-events:none;z-index:2}
+.step{border-radius:28px;padding:30px;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.step:hover{transform:translateY(-4px)}
+.step b{display:block;font-size:42px;color:var(--blue);font-weight:900}
+.step h3{margin:6px 0}
+.step p{color:#46506e}
+.price{border-radius:32px;padding:32px;display:flex;flex-direction:column;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.price:hover{transform:translateY(-5px)}
+.price.pop{background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(120,150,255,.22) 55%,rgba(255,255,255,.4));border-color:rgba(255,255,255,.9);box-shadow:inset 0 2px 1px #fff,inset 2px 3px 8px rgba(255,255,255,.6),inset -3px -4px 14px rgba(45,91,255,.28),0 24px 56px rgba(45,91,255,.3)}
+.price .tag{align-self:flex-start;color:#fff;font-size:12px;font-weight:800;padding:5px 14px;border-radius:100px;margin-bottom:10px;background:linear-gradient(180deg,rgba(110,148,255,.95),rgba(45,91,255,.9));border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1.5px 1px rgba(255,255,255,.8),0 6px 14px rgba(45,91,255,.35);text-shadow:0 1px 2px rgba(10,30,120,.3)}
+.price .val{font-size:38px;font-weight:900;margin:10px 0}
+.price .val small{font-size:15px;color:#5b6483;font-weight:600}
+.price .desc{color:#46506e;font-size:14px;margin:0 0 14px}
+.price ul{list-style:none;margin:10px 0 24px;color:#2f3858;line-height:1.9;flex:1;font-size:14.5px}
+.price li::before{content:"✓ ";color:var(--blue);font-weight:900}
+.price li.no{color:#8a90a8}
+.price li.no::before{content:"✕ ";color:#c0c5d8}
+.price .btn{text-align:center}
+.quote{border-radius:28px;padding:28px;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.quote:hover{transform:translateY(-4px)}
+.quote p{font-size:16px;margin-bottom:14px}
+.quote span{color:#56607e;font-size:14px;font-weight:600}
+.faq{max-width:720px;margin:0 auto}
+.faq details{border-radius:24px;padding:18px 22px;margin-bottom:12px;transition:background .3s}
+.faq details[open]{background:linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,255,255,.3))}
+.faq summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--blue);font-size:22px;line-height:1;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:#46506e;margin-top:10px}
+form{max-width:560px;margin:0 auto;display:grid;gap:14px}
+input,select,textarea{width:100%;padding:15px 20px;border-radius:22px;font:inherit;color:var(--ink);transition:box-shadow .3
